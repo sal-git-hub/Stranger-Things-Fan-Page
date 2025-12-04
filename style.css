@@ -1,0 +1,175 @@
+/* GENERAL PAGE STYLES */
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  padding: 24px;
+  line-height: 1.4;
+}
+
+h1 {
+  text-align: center;
+  color: #e50914;
+  text-shadow: 0 0 10px #e50914;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #e50914;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #e50914;
+}
+
+
+/* ABOUT SECTION */
+.about {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.about img {
+  width: 160px;
+  border: 2px solid #e50914;
+  border-radius: 6px;
+}
+
+.about .copy {
+  max-width: 700px;
+}
+
+
+/* CHARACTERS GRID */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.grid figure {
+  width: 110px;
+  margin: 0;
+  text-align: center;
+}
+
+.grid img {
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.grid figcaption {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #fff;
+}
+
+
+/* EPISODE LIST SECTION (UL + OL LISTS) */
+.episode-list {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.episode-list > li {
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e50914;
+}
+
+.episode-list ol {
+  margin-left: 25px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+/* RELEASE DATES TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #220101;
+  color: #e50914;
+  font-weight: bold;
+}
+
+td {
+  background: #111;
+}
+
+
+/* SURVEY FORM */
+.st-form {
+  width: 350px;
+  margin: 24px auto;
+  padding: 20px;
+  background: #111;
+  border: 2px solid #e50914;
+  border-radius: 8px;
+}
+
+.st-form label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #e50914;
+}
+
+.st-form input,
+.st-form select,
+.st-form textarea {
+  width: 100%;
+  padding: 8px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #e50914;
+  border-radius: 4px;
+}
+
+.radios {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: #e50914;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff2730;
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
