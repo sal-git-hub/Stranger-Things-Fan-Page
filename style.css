@@ -1,4 +1,4 @@
-/* GENERAL PAGE STYLES */
+
 body {
   background: #000;
   color: #fff;
@@ -22,8 +22,6 @@ h2 {
   text-shadow: 0 0 5px #e50914;
 }
 
-
-/* ABOUT SECTION */
 .about {
   display: flex;
   gap: 18px;
@@ -41,8 +39,6 @@ h2 {
   max-width: 700px;
 }
 
-
-/* CHARACTERS GRID */
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -69,8 +65,6 @@ h2 {
   color: #fff;
 }
 
-
-/* EPISODE LIST SECTION (UL + OL LISTS) */
 .episode-list {
   margin-left: 20px;
   margin-top: 10px;
@@ -90,8 +84,6 @@ h2 {
   color: #fff;
 }
 
-
-/* RELEASE DATES TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -114,8 +106,6 @@ td {
   background: #111;
 }
 
-
-/* SURVEY FORM */
 .st-form {
   width: 350px;
   margin: 24px auto;
@@ -165,11 +155,10 @@ button:hover {
   background: #ff2730;
 }
 
-
-/* FOOTER */
 footer {
   text-align: center;
   margin-top: 30px;
   font-size: 14px;
   color: #777;
+
 }
