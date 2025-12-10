@@ -1,164 +1,129 @@
+/* GENERAL PAGE STYLES */
+:root{
+  --accent:#e50914;
+  --bg:#000;
+  --panel:#111;
+  --muted:#ddd;
+}
 
+*{box-sizing:border-box;margin:0;padding:0}
 body {
-  background: #000;
-  color: #fff;
+  background: var(--bg);
+  color: var(--muted);
   font-family: 'Cinzel', serif;
   padding: 24px;
-  line-height: 1.4;
+  line-height:1.45;
 }
 
-h1 {
-  text-align: center;
-  color: #e50914;
-  text-shadow: 0 0 10px #e50914;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
+/* HEADER with flicker animation */
+header { text-align:center; margin-bottom:18px; }
+header h1 {
+  color: var(--accent);
+  letter-spacing:4px;
+  font-size:40px;
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:6px;
+  text-shadow: 0 0 10px rgba(229,9,20,0.5);
+  animation: flicker 3s linear infinite;
 }
 
-h2 {
-  color: #e50914;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 5px #e50914;
+/* flicker keyframes */
+@keyframes flicker {
+  0%   { opacity: 1; text-shadow: 0 0 12px rgba(229,9,20,0.6); transform: translateY(0); }
+  3%   { opacity: 0.85; text-shadow: none; }
+  6%   { opacity: 1; text-shadow: 0 0 12px rgba(229,9,20,0.6); }
+  50%  { opacity: 0.98; }
+  100% { opacity: 1; }
 }
 
-.about {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
+/* ABOUT */
+.about { display:flex; gap:18px; align-items:flex-start; margin-bottom:22px; }
+.about img { width:160px; border:2px solid rgba(229,9,20,0.2); border-radius:6px; }
+.about .copy { max-width:760px; padding-top:6px; }
 
-.about img {
-  width: 160px;
-  border: 2px solid #e50914;
-  border-radius: 6px;
-}
-
-.about .copy {
-  max-width: 700px;
-}
-
+/* GRID CHARACTERS */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: center;
-  margin-top: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+  margin-top:10px;
 }
 
-.grid figure {
-  width: 110px;
-  margin: 0;
-  text-align: center;
+/* figure float animation */
+.float { width:110px; text-align:center; margin:0; animation: float 6s ease-in-out infinite; }
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
 .grid img {
-  width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  width:100%;
+  border-radius:6px;
+  border: 2px solid rgba(255,255,255,0.06);
+  display:block;
+  transition: transform 260ms ease, box-shadow 260ms ease, filter 260ms ease;
+  will-change: transform;
 }
 
-.grid figcaption {
-  margin-top: 5px;
-  font-size: 13px;
-  color: #fff;
+/* hover effect for images (Practical 6) */
+.grid img.hover-zoom:hover,
+.grid img.hover-zoom:focus {
+  transform: scale(1.12);
+  box-shadow: 0 10px 30px rgba(229,9,20,0.35);
+  filter: brightness(1.05);
 }
 
-.episode-list {
-  margin-left: 20px;
-  margin-top: 10px;
+/* figcaption */
+.grid figcaption { margin-top:6px; font-size:13px; color:#fff; letter-spacing:1px; }
+
+/* fade-in for sections */
+.fade-in { animation: fadeIn 900ms ease both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.episode-list > li {
-  margin-bottom: 18px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #e50914;
+/* EPISODE LIST */
+.episode-list { margin-left:20px; margin-top:10px; }
+.episode-list > li { margin-bottom:18px; font-size:18px; font-weight:bold; color:var(--accent); }
+.episode-list ol { margin-left:25px; margin-top:6px; font-size:14px; color:#fff; }
+
+/* TABLE */
+table { width:100%; border-collapse:collapse; margin-top:15px; }
+th, td { border:1px solid #333; padding:10px; text-align:center; background:#0b0b0b; color:#ddd; }
+th { background:#220101; color:var(--accent); }
+
+/* SURVEY FORM */
+.st-form { width:350px; margin:24px auto; padding:20px; background:var(--panel); border:2px solid rgba(229,9,20,0.12); border-radius:8px; }
+.st-form label { display:block; margin:10px 0 6px; color:var(--accent); }
+.st-form input, .st-form select, .st-form textarea {
+  width:100%; padding:8px; background:#222; color:#fff; border:1px solid rgba(229,9,20,0.12); border-radius:4px;
 }
 
-.episode-list ol {
-  margin-left: 25px;
-  margin-top: 6px;
-  font-size: 14px;
-  color: #fff;
+/* CTA button with transition (Practical 6) */
+button.cta {
+  width:100%; padding:10px; margin-top:12px; background:var(--accent); color:#fff; border:none; border-radius:6px;
+  font-weight:700; cursor:pointer; transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+/* hover & active states for CTA */
+button.cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(229,9,20,0.35);
+  filter: brightness(1.03);
+}
+button.cta:active { transform: translateY(-1px) scale(0.99); }
+
+/* small screens */
+@media (max-width:520px){
+  header h1 { font-size:28px; }
+  .grid figure { width:88px; }
+  .about { flex-direction:column; align-items:center; }
 }
 
-th, td {
-  border: 1px solid #444;
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  background: #220101;
-  color: #e50914;
-  font-weight: bold;
-}
-
-td {
-  background: #111;
-}
-
-.st-form {
-  width: 350px;
-  margin: 24px auto;
-  padding: 20px;
-  background: #111;
-  border: 2px solid #e50914;
-  border-radius: 8px;
-}
-
-.st-form label {
-  display: block;
-  margin: 10px 0 5px;
-  color: #e50914;
-}
-
-.st-form input,
-.st-form select,
-.st-form textarea {
-  width: 100%;
-  padding: 8px;
-  background: #222;
-  color: #fff;
-  border: 1px solid #e50914;
-  border-radius: 4px;
-}
-
-.radios {
-  display: flex;
-  gap: 15px;
-  margin-top: 5px;
-  color: #fff;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 12px;
-  background: #e50914;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ff2730;
-}
-
-footer {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #777;
-
-}
+/* small niceties */
+a { color: var(--accent); }
+footer { text-align:center; margin-top:30px; color:#777; font-size:14px; }
